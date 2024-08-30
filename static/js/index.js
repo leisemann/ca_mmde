@@ -91,7 +91,7 @@ $(document).ready(function() {
 			infinite: false,
 			autoplay: true,
 			autoplaySpeed: 4000,
-      pagination: true
+      pagination: false
     }
 
 		// Initialize all div with carousel class
