@@ -85,9 +85,9 @@ $(document).ready(function() {
       initialSlide: 0,
 			slidesToScroll: 1,
 			slidesToShow: 2,
-			loop: false,
-			infinite: true,
-			autoplay: false,
+			loop: true,
+			infinite: false,
+			autoplay: true,
 			autoplaySpeed: 4000,
       pagination: true
     }
