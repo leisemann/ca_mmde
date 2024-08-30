@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Introducing a Class-Aware Metric for Monocular Depth Estimation: An Automotive Perspective">
+  <meta name="keywords" content="ca_mmde, class aware mmde, monocular metric depth estimation, depth estimation, metric, mmde metric">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Class-Aware Metric for Monocular Depth Estimation</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/image-comp-viewer.min.css">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.ico">
+
+  <script src="./static/js/image-comp-viewer.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Introducing a Class-Aware Metric for Monocular Depth Estimation:<br> An Automotive Perspective</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://linkedin.com/in/badertim">Tim Bader</a><sup>1,5</sup>,</span>
+            <span class="author-block">
+              <a href="https://linkedin.com/in/leon-eisemann">Leon Eisemann</a><sup>2,3</sup>,</span>
+            <span class="author-block">
+              <a href="https://linkedin.com/in/adrian-pogorzelski">Adrian Pogorzelski</a><sup>1,4</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://linkedin.com/in/namratajangid">Namrata Jangid</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/kis-balazs">Attila-Balazs Kis</a><sup>2</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Dr. Ing. h.c. F. Porsche AG, Stuttgart, Germany</span><br>
+            <span class="author-block"><sup>2</sup>Porsche Engineering Group GmbH, Weissach, Germany</span><br>
+            <span class="author-block"><sup>3</sup>Institute for Applied AI, Stuttgart Media University, Stuttgart, Germany</span><br>
+            <span class="author-block"><sup>4</sup>University of Freiburg, Freiburg, Germany</span><br>
+            <span class="author-block"><sup>5</sup>Ulm University, Ulm, Germany</span><br>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/google/nerfies"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Overview</h2>
+        <div class="content has-text-justified">
+          <p>
+            The increasing accuracy reports of metric monocular depth
+            estimation models leads to a growing interest from the automotive domain.
+            Current model evaluations do not provide deeper insights on the
+            models performance, also in relation to safety critical or unseen classes.
+          </p>
+          <p>
+            We propose a novel metric that leverages three components, the class wise component, 
+            edge and corner image feature component, and a global consistency retaining component. 
+            Classes are furtherweighted on their distance in the scene and on criticality for automotive applications.
+          </p>
+          <p>
+            In the evaluation, we present the benefits of our metric through comparison to classical metrics, 
+            class-wise analytics and theretrieval of critical situations. The results show that our metric 
+            provides deeper insights into model results, while fulfilling safety criticalrequirements.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3 is-centered has-text-centered">Gallery</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+
+        <div class="item item-1_campus_course_convoy_0" style="border: none">
+          <div id="image-compare-default">
+            <img src="./static/images/gallery/1_campus_course_convoy_0.png" alt="" />
+            <img src="./static/images/gallery/1_campus_course_convoy_0_dav2vitl.png" alt="" />
+          </div>
+          <div id="image-compare-depth" style="margin-top: 10px;">
+            <img src="./static/images/gallery/1_campus_course_convoy_0_dav2vitl.png" alt="" />
+            <img src="./static/images/gallery/1_campus_course_convoy_0_m3dvitg2.png" alt="" />
+          </div>
+        </div>
+
+        <div class="item item-3_wet_asphalt_campus_and_urban_9" style="border: none">
+          <div id="image-compare-default">
+            <img src="./static/images/gallery/3_wet_asphalt_campus_and_urban_9.png" alt="" />
+            <img src="./static/images/gallery/3_wet_asphalt_campus_and_urban_9_dav2vitl.png" alt="" />
+          </div>
+          <div id="image-compare-depth" style="margin-top: 10px;">
+            <img src="./static/images/gallery/3_wet_asphalt_campus_and_urban_9_dav2vitl.png" alt="" />
+            <img src="./static/images/gallery/3_wet_asphalt_campus_and_urban_9_m3dvitg2.png" alt="" />
+          </div>
+        </div>
+
+        <div class="item item-6_soil_and_gravel_path_along_bush_40" style="border: none">
+          <div id="image-compare-default">
+            <img src="./static/images/gallery/6_soil_and_gravel_path_along_bush_40.png" alt="" />
+            <img src="./static/images/gallery/6_soil_and_gravel_path_along_bush_40_dav2vitl.png" alt="" />
+          </div>
+          <div id="image-compare-depth" style="margin-top: 10px;">
+            <img src="./static/images/gallery/6_soil_and_gravel_path_along_bush_40_dav2vitl.png" alt="" />
+            <img src="./static/images/gallery/6_soil_and_gravel_path_along_bush_40_m3dvitg2.png" alt="" />
+          </div>
+        </div>
+
+        <div class="item item-7_graph_path_field_and_forest_with_leaves_9" style="border: none">
+          <div id="image-compare-default">
+            <img src="./static/images/gallery/7_graph_path_field_and_forest_with_leaves_9.png" alt="" />
+            <img src="./static/images/gallery/7_graph_path_field_and_forest_with_leaves_9_dav2vitl.png" alt="" />
+          </div>
+          <div id="image-compare-depth" style="margin-top: 10px;">
+            <img src="./static/images/gallery/7_graph_path_field_and_forest_with_leaves_9_dav2vitl.png" alt="" />
+            <img src="./static/images/gallery/7_graph_path_field_and_forest_with_leaves_9_m3dvitg2.png" alt="" />
+          </div>
+        </div>
+
+        <div class="item item-8_wet_speedway_0" style="border: none">
+          <div id="image-compare-default">
+            <img src="./static/images/gallery/8_wet_speedway_0.png" alt="" />
+            <img src="./static/images/gallery/8_wet_speedway_0_dav2vitl.png" alt="" />
+          </div>
+          <div id="image-compare-depth" style="margin-top: 10px;">
+            <img src="./static/images/gallery/8_wet_speedway_0_dav2vitl.png" alt="" />
+            <img src="./static/images/gallery/8_wet_speedway_0_m3dvitg2.png" alt="" />
+          </div>
+        </div>
+
+        <div class="item item-11_uphill_road_in_snow_0" style="border: none">
+          <div id="image-compare-default">
+            <img src="./static/images/gallery/11_uphill_road_in_snow_0.png" alt="" />
+            <img src="./static/images/gallery/11_uphill_road_in_snow_0_dav2vitl.png" alt="" />
+          </div>
+          <div id="image-compare-depth" style="margin-top: 10px;">
+            <img src="./static/images/gallery/11_uphill_road_in_snow_0_dav2vitl.png" alt="" />
+            <img src="./static/images/gallery/11_uphill_road_in_snow_0_m3dvitg2.png" alt="" />
+          </div>
+        </div>
+
+        <div class="item item-16_speedway_to_highway_0" style="border: none">
+          <div id="image-compare-default">
+            <img src="./static/images/gallery/16_speedway_to_highway_0.png" alt="" />
+            <img src="./static/images/gallery/16_speedway_to_highway_0_dav2vitl.png" alt="" />
+          </div>
+          <div id="image-compare-depth" style="margin-top: 10px;">
+            <img src="./static/images/gallery/16_speedway_to_highway_0_dav2vitl.png" alt="" />
+            <img src="./static/images/gallery/16_speedway_to_highway_0_m3dvitg2.png" alt="" />
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- How it works. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 is-centered has-text-centered">How it works</h2>
+
+        <!-- abc. -->
+        <h3 class="title is-4 has-text-centered">abc</h3>
+        <div class="content has-text-justified">
+          <p>
+            abc maybe also an image
+          </p>
+        </div>
+        <br/>
+        <!--/ abc. -->
+
+        <!-- abc. -->
+        <h3 class="title is-4 has-text-centered">abc</h3>
+        <div class="content has-text-justified">
+          <p>
+            abc maybe also an image
+          </p>
+        </div>
+        <br/>
+        <!--/ abc. -->
+
+
+      </div>
+    </div>
+    <!--/ How it works. -->
+  </div>
+</section>
+
+
+    
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Benchmark. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered">Benchmark</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            results and table goes here
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Benchmark. -->
+  </div>
+</section>
+
+
+    
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Related Work. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered">Related Work</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            lorem ipsum
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Related Work. -->
+
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Citation</h2>
+    <pre><code>@article{tba,
+  author    = {tba},
+  title     = {tba},
+  journal   = {tba},
+  year      = {2024},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            Demo images are from the
+            <a href="https://goose-dataset.de/">
+              German Outdoor and Offroad Dataset
+            </a>.
+          </p>
+          <p>
+            Favicon is from 
+            <a href="https://github.com/twitter/twemoji">
+              Twemoji
+            </a>
+            and licensed under
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+              CC-BY-4.0
+            </a>.
+          </p>
+          <p>
+            Image comparison slider based on
+            <a href="https://github.com/kylewetton/image-compare-viewer">image-compare-viewer</a>
+            and licensed under
+            <a rel="license" href="https://github.com/kylewetton/image-compare-viewer/blob/master/LICENSE">
+              MIT
+            </a>.
+          </p>
+          <p>
+            Website template based on
+            <a href="https://github.com/nerfies/nerfies.github.io">
+              Nerfies
+            </a>
+            and licensed under
+            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+              CC-BY-SA-4.0
+            </a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+
+</html>
