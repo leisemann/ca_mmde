@@ -15,8 +15,8 @@ function init_comparisons() {
 
     showLabels: true,
     labelOptions: {
-      before: 'Default',
-      after: 'Depth Anything V2 ViT-L',
+      before: 'Original',
+      after: 'Segmentation',
       onHover: false
     },
 
@@ -46,8 +46,8 @@ function init_comparisons() {
 
     showLabels: true,
     labelOptions: {
-      before: 'Depth Anything V2 ViT-L',
-      after: 'Metric3D V2 ViT-G2',
+      before: 'Best CA Metric<br>Depth Anything V2 ViT-L',
+      after: 'Best RMSE<br>Metric3D V2 ViT-G2',
       onHover: false
     },
 
@@ -66,6 +66,7 @@ function init_comparisons() {
 
   const default_viewers = document.querySelectorAll("#image-compare-default");
   default_viewers.forEach((element) => {
+    console.log(element.parentElement.classList)
     let view = new ImageCompare(element, options_default_vs_depth).mount();
   });
 
@@ -73,6 +74,7 @@ function init_comparisons() {
   depth_viewers.forEach((element) => {
     let view = new ImageCompare(element, options_depth_vs_depth).mount();
   });
+
 }
 
 
