@@ -46,8 +46,8 @@ function init_comparisons() {
 
     showLabels: true,
     labelOptions: {
-      before: 'Best CA Metric<br>Depth Anything V2 ViT-L',
-      after: 'Best RMSE<br>Metric3D V2 ViT-G2',
+      before: 'Best CA Metric:<br>Depth Anything V2',
+      after: 'Best RMSE:<br>Metric3D V2',
       onHover: false
     },
 
