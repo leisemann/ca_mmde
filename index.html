@@ -35,7 +35,11 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Introducing a Class-Aware Metric for Monocular Depth Estimation:<br> An Automotive Perspective</h1>
+          <h1 class="title is-1 publication-title">
+            Introducing a Class-Aware Metric for Monocular Depth Estimation:
+            <br>An Automotive Perspective
+          </h1>
+          
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://linkedin.com/in/badertim">Tim Bader</a><sup>1,5</sup>,</span>
@@ -236,7 +240,7 @@
         <p>
           The top row shows the original image and its segmentation mask from the
           <a href="https://goose-dataset.de/" style="color: #3273dc">
-            German Outdoor and Offroad Dataset</a>. 
+            German Outdoor and Offroad Dataset (GOOSE)</a>. 
           The bottom row shows the respective depth maps predicted by
           <a href="https://arxiv.org/abs/2406.09414" style="color: #3273dc">Depth Anything V2 ViT-L</a>, 
           which performs best according to our metric,
@@ -268,15 +272,113 @@
         <br/>
         <!--/ abc. -->
 
-        <!-- abc. -->
-        <h3 class="title is-4 has-text-centered">abc</h3>
+        <!-- gidas. -->
+        <h3 class="title is-4 has-text-centered">Automotive Weighting</h3>
         <div class="content has-text-justified">
           <p>
-            abc maybe also an image
+            The following table shows the <a href="https://www.gidas.org/start.html">GIDAS</a> 
+            distribution of accident opponents which we use to weight the class 
+            importance for our metric in the benchmark below.
           </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Main Class</th>
+                <th>Sub Class</th>
+                <th>Distribution</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Car-to-Vehicle</td>
+                <td></td>
+                <td><b>62,06%</b></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>Car</td>
+                <td>50,04%</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>Motorcycle</td>
+                <td>7,38%</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>Truck & Van & Bus</td>
+                <td>3,73%</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>Trains</td>
+                <td>0,63%</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>Other Motorized Vehicle</td>
+                <td>0,27%</td>
+              </tr>
+              <tr>
+                <td>Car-To-VRU</td>
+                <td></td>
+                <td><b>30%</b></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>Bicycles</td>
+                <td>21,95%</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>Pedestrian</td>
+                <td>8,05%</td>
+              </tr>
+              <tr>
+                <td>Car-To-Object</td>
+                <td></td>
+                <td><b>7,94%</b></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>Pole/tree</td>
+                <td>3,24%</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>Guardrail</td>
+                <td>1,17%</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>Ditch / Embankment</td>
+                <td>1,07%</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>Road / Terrain</td>
+                <td>1,04%</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>Other Object</td>
+                <td>0,75%</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>Wall / bridge</td>
+                <td>0,56%</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>Bush / Fence</td>
+                <td>0,11%</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
         <br/>
-        <!--/ abc. -->
+        <!--/ gidas. -->
 
 
       </div>
@@ -293,11 +395,98 @@
     <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3 has-text-centered">Benchmark</h2>
-
         <div class="content has-text-justified">
           <p>
-            results and table goes here
+            We compare the results of over 25 <a href="https://goose-dataset.de/">GOOSE</a> dataset scenes with classical errors against our metric. 
+            While both provide comprehensive insights into the model performances, 
+            ours offers a more nuanced interpretation.
           </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Model</th>
+                <th>Variant</th>
+                <th>MAE</th>
+                <th>RMSE</th>
+                <th>Abs-Rel</th>
+                <th>Ours</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>AdaBins</td>
+                <td>KITTI</td>
+                <td>13.3</td>
+                <td>25.21</td>
+                <td>0.33</td>
+                <td>20.65</td>
+              </tr>
+              <tr>
+                <td>DepthAnything V2</td>
+                <td>ViT L</td>
+                <td>8.39</td>
+                <td><u>16.56</u></td>
+                <td>0.3</td>
+                <td>14.47</td>
+              </tr>
+              <tr>
+                <td>EcoDepth</td>
+                <td>-</td>
+                <td>10.25</td>
+                <td>20.51</td>
+                <td>0.28</td>
+                <td>17.43</td>
+              </tr>
+              <tr>
+                <td>Marigold</td>
+                <td>-</td>
+                <td>12.70</td>
+                <td>20.38</td>
+                <td>0.65</td>
+                <td>17.72</td>
+              </tr>
+              <tr>
+                <td>Metric3D V2</td>
+                <td>ViT G2</td>
+                <td><b>6.47</b></td>
+                <td><b>14.44</b></td>
+                <td><b>0.2</b></td>
+                <td><b>11.57</b></td>
+              </tr>
+              <tr>
+                <td>PatchFusion</td>
+                <td>DA V1 ViT L</td>
+                <td>15.05</td>
+                <td>24.33</td>
+                <td>0.55</td>
+                <td>23.32</td>
+              </tr>
+              <tr>
+                <td>UniDepth V1</td>
+                <td>ConvNext L</td>
+                <td><u>8.26</u></td>
+                <td>16.7</td>
+                <td><u>0.24</u></td>
+                <td><u>14.19</u></td>
+              </tr>
+              <tr>
+                <td>UniDepth V2</td>
+                <td>ViT L</td>
+                <td>8.57</td>
+                <td>20</td>
+                <td>0.27</td>
+                <td>14.24</td>
+              </tr>
+              <tr>
+                <td>ZoeDepth</td>
+                <td>NYU + KITTI</td>
+                <td>9.51</td>
+                <td>19.32</td>
+                <td>0.27</td>
+                <td>16.22</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
@@ -310,19 +499,172 @@
 <section class="section">
   <div class="container is-max-desktop">
     <!-- Related Work. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3 has-text-centered">Related Work</h2>
+    <h2 class="title is-3 has-text-centered">Related Work</h2>
+      <div id="results-carousel" class="carousel results-carousel">
 
-        <div class="content has-text-justified">
-          <p>
-            lorem ipsum
-          </p>
+        <div class="item" style="background-color: rgba(128, 0, 128, 0.2);">
+          <div style="padding: 1rem">
+            <h4 class="title is-4 has-text-centered">AdaBins</h4>
+            <table style="width: 100%; font-size: 1rem;">
+              <tr>
+                <td style="padding-right: 1rem;"><strong>Authors</strong></td>
+                <td>Farooq Bhat, Shariq and Alhashim, Ibraheem and Wonka, Peter</td>
+              </tr>
+              <tr>
+                <td style="padding-right: 1rem;"><strong>GitHub</strong></td>
+                <td><a href="https://github.com/shariqfarooq123/AdaBins">https://github.com/shariqfarooq123/AdaBins</a></td>
+              </tr>
+              <tr>
+                <td style="padding-right: 1rem;"><strong>Paper</strong></td>
+                <td><a href="https://arxiv.org/pdf/2011.14141">https://arxiv.org/pdf/2011.14141</a></td>
+              </tr>
+            </table>
+          </div>
         </div>
-      </div>
-    </div>
-    <!--/ Related Work. -->
+        
+        <div class="item" style="background-color: rgba(128, 0, 128, 0.2);">
+          <div style="padding: 1rem">
+            <h4 class="title is-4 has-text-centered">Depth Anything V2</h4>
+            <table style="width: 100%; font-size: 1rem;">
+              <tr>
+                <td style="padding-right: 1rem;"><strong>Authors</strong></td>
+                <td>Yang, Lihe and Kang, Bingyi and Huang, Zilong and Zhao, Zhen and Xu, Xiaogang and Feng, Jiashi and Zhao, Hengshuang</td>
+              </tr>
+              <tr>
+                <td style="padding-right: 1rem;"><strong>GitHub</strong></td>
+                <td><a href="https://github.com/DepthAnything/Depth-Anything-V2">https://github.com/DepthAnything/Depth-Anything-V2</a></td>
+              </tr>
+              <tr>
+                <td style="padding-right: 1rem;"><strong>Paper</strong></td>
+                <td><a href="https://arxiv.org/pdf/2406.09414">https://arxiv.org/pdf/2406.09414</a></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        
+        <div class="item" style="background-color: rgba(128, 0, 128, 0.2);">
+          <div style="padding: 1rem">
+            <h4 class="title is-4 has-text-centered">ECoDepth</h4>
+            <table style="width: 100%; font-size: 1rem;">
+              <tr>
+                <td style="padding-right: 1rem;"><strong>Authors</strong></td>
+                <td>Suraj Patni and Aradhye Agarwal and Chetan Arora</td>
+              </tr>
+              <tr>
+                <td style="padding-right: 1rem;"><strong>GitHub</strong></td>
+                <td><a href="https://github.com/aradhye2002/ecodepth">https://github.com/aradhye2002/ecodepth</a></td>
+              </tr>
+              <tr>
+                <td style="padding-right: 1rem;"><strong>Paper</strong></td>
+                <td><a href="https://arxiv.org/pdf/2403.18807">https://arxiv.org/pdf/2403.18807</a></td>
+              </tr>
+            </table>
+          </div>
+        </div>
 
+        <div class="item" style="background-color: rgba(128, 0, 128, 0.2);">
+          <div style="padding: 1rem">
+            <h4 class="title is-4 has-text-centered">Marigold</h4>
+            <table style="width: 100%; font-size: 1rem;">
+              <tr>
+                <td style="padding-right: 1rem;"><strong>Authors</strong></td>
+                <td>Bingxin Ke and Anton Obukhov and Shengyu Huang and Nando Metzger and Rodrigo Caye Daudt and Konrad Schindler</td>
+              </tr>
+              <tr>
+                <td style="padding-right: 1rem;"><strong>GitHub</strong></td>
+                <td><a href="https://github.com/prs-eth/marigold">https://github.com/prs-eth/marigold</a></td>
+              </tr>
+              <tr>
+                <td style="padding-right: 1rem;"><strong>Paper</strong></td>
+                <td><a href="https://arxiv.org/pdf/2312.02145">https://arxiv.org/pdf/2312.02145</a></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="item" style="background-color: rgba(128, 0, 128, 0.2);">
+          <div style="padding: 1rem">
+            <h4 class="title is-4 has-text-centered">Metric3D V2</h4>
+            <table style="width: 100%; font-size: 1rem;">
+              <tr>
+                <td style="padding-right: 1rem;"><strong>Authors</strong></td>
+                <td>Mu Hu and Wei Yin and Chi Zhang and Zhipeng Cai and Xiaoxiao Long and Hao Chen and Kaixuan Wang and Gang Yu and Chunhua Shen and Shaojie Shen</td>
+              </tr>
+              <tr>
+                <td style="padding-right: 1rem;"><strong>GitHub</strong></td>
+                <td><a href="https://github.com/YvanYin/Metric3D">https://github.com/YvanYin/Metric3D</a></td>
+              </tr>
+              <tr>
+                <td style="padding-right: 1rem;"><strong>Paper</strong></td>
+                <td><a href="https://arxiv.org/pdf/2404.15506">https://arxiv.org/pdf/2404.15506</a></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="item" style="background-color: rgba(128, 0, 128, 0.2);">
+          <div style="padding: 1rem">
+            <h4 class="title is-4 has-text-centered">PatchFusion</h4>
+            <table style="width: 100%; font-size: 1rem;">
+              <tr>
+                <td style="padding-right: 1rem;"><strong>Authors</strong></td>
+                <td>Zhenyu Li and Shariq Farooq Bhat and Peter Wonka</td>
+              </tr>
+              <tr>
+                <td style="padding-right: 1rem;"><strong>GitHub</strong></td>
+                <td><a href="https://github.com/zhyever/PatchFusion">https://github.com/zhyever/PatchFusion</a></td>
+              </tr>
+              <tr>
+                <td style="padding-right: 1rem;"><strong>Paper</strong></td>
+                <td><a href="https://arxiv.org/pdf/2312.02284">https://arxiv.org/pdf/2312.02284</a></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="item" style="background-color: rgba(128, 0, 128, 0.2);">
+          <div style="padding: 1rem">
+            <h4 class="title is-4 has-text-centered">UniDepth</h4>
+            <table style="width: 100%; font-size: 1rem;">
+              <tr>
+                <td style="padding-right: 1rem;"><strong>Authors</strong></td>
+                <td>Luigi Piccinelli and Yung-Hsu Yang and Christos Sakaridis and Mattia Segu and Siyuan Li and Luc Van Gool and Fisher Yu</td>
+              </tr>
+              <tr>
+                <td style="padding-right: 1rem;"><strong>GitHub</strong></td>
+                <td><a href="https://github.com/lpiccinelli-eth/UniDepth">https://github.com/lpiccinelli-eth/UniDepth</a></td>
+              </tr>
+              <tr>
+                <td style="padding-right: 1rem;"><strong>Paper</strong></td>
+                <td><a href="https://arxiv.org/pdf/2403.18913">https://arxiv.org/pdf/2403.18913</a></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="item" style="background-color: rgba(128, 0, 128, 0.2);">
+          <div style="padding: 1rem">
+            <h4 class="title is-4 has-text-centered">ZoeDepth</h4>
+            <table style="width: 100%; font-size: 1rem;">
+              <tr>
+                <td style="padding-right: 1rem;"><strong>Authors</strong></td>
+                <td>Shariq Farooq Bhat and Reiner Birkl and Diana Wofk and Peter Wonka and Matthias Müller</td>
+              </tr>
+              <tr>
+                <td style="padding-right: 1rem;"><strong>GitHub</strong></td>
+                <td><a href="https://github.com/isl-org/ZoeDepth">https://github.com/isl-org/ZoeDepth</a></td>
+              </tr>
+              <tr>
+                <td style="padding-right: 1rem;"><strong>Paper</strong></td>
+                <td><a href="https://arxiv.org/pdf/2302.12288">https://arxiv.org/pdf/2302.12288</a></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        
+      </div>
+    <!--/ Related Work. -->
   </div>
 </section>
 
@@ -348,7 +690,7 @@
           <p>
             Demo images are from the
             <a href="https://goose-dataset.de/">
-              German Outdoor and Offroad Dataset
+              German Outdoor and Offroad Dataset (GOOSE)
             </a>.
           </p>
           <p>
