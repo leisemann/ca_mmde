@@ -91,7 +91,12 @@ $(document).ready(function() {
 			infinite: false,
 			autoplay: true,
 			autoplaySpeed: 4000,
-      pagination: false
+      pagination: false,
+      breakpoints: [{
+        changePoint: 768,
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }],
     }
 
 		// Initialize all div with carousel class
