@@ -1,73 +1,75 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta name="description"
-        content="Introducing a Class-Aware Metric for Monocular Depth Estimation: An Automotive Perspective">
-  <meta name="keywords" content="ca_mmde, class aware mmde, monocular metric depth estimation, depth estimation, metric, mmde metric">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Class-Aware Metric for Monocular Depth Estimation</title>
+    <meta charset="utf-8">
+    <meta name="description"
+          content="Introducing a Class-Aware Metric for Monocular Depth Estimation: An Automotive Perspective">
+    <meta name="keywords"
+          content="ca_mmde, class aware mmde, monocular metric depth estimation, depth estimation, metric, mmde metric">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Class-Aware Metric for Monocular Depth Estimation</title>
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+          rel="stylesheet">
 
-  <link rel="stylesheet" href="./static/css/image-comp-viewer.min.css">
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.ico">
+    <link rel="stylesheet" href="./static/css/image-comp-viewer.min.css">
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <link rel="icon" href="./static/images/favicon.ico">
 
-  <script src="./static/js/image-comp-viewer.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
+    <script src="./static/js/image-comp-viewer.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
 <section class="hero">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">
-            Introducing a Class-Aware Metric for Monocular Depth Estimation:
-            <br>An Automotive Perspective
-          </h1>
-          
-          <div class="is-size-5 publication-authors">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+                <div class="column has-text-centered">
+                    <h1 class="title is-1 publication-title">
+                        Introducing a Class-Aware Metric for Monocular Depth Estimation:
+                        <br>An Automotive Perspective
+                    </h1>
+
+                    <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://linkedin.com/in/badertim">Tim Bader</a><sup>1,5</sup>,</span>
-            <span class="author-block">
+                        <span class="author-block">
               <a href="https://linkedin.com/in/leon-eisemann">Leon Eisemann</a><sup>2,3</sup>,</span>
-            <span class="author-block">
+                        <span class="author-block">
               <a href="https://linkedin.com/in/adrian-pogorzelski">Adrian Pogorzelski</a><sup>1,4</sup>,
             </span>
-            <span class="author-block">
+                        <span class="author-block">
               <a href="https://linkedin.com/in/namratajangid">Namrata Jangid</a><sup>2</sup>,
             </span>
-            <span class="author-block">
+                        <span class="author-block">
               <a href="https://www.linkedin.com/in/kis-balazs">Attila-Balazs Kis</a><sup>2</sup>
             </span>
-          </div>
+                    </div>
 
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>Dr. Ing. h.c. F. Porsche AG, Stuttgart, Germany</span><br>
-            <span class="author-block"><sup>2</sup>Porsche Engineering Group GmbH, Weissach, Germany</span><br>
-            <span class="author-block"><sup>3</sup>Institute for Applied AI, Stuttgart Media University, Stuttgart, Germany</span><br>
-            <span class="author-block"><sup>4</sup>University of Freiburg, Freiburg, Germany</span><br>
-            <span class="author-block"><sup>5</sup>Ulm University, Ulm, Germany</span><br>
-          </div>
+                    <div class="is-size-5 publication-authors">
+                        <span class="author-block"><sup>1</sup>Dr. Ing. h.c. F. Porsche AG, Stuttgart, Germany</span><br>
+                        <span class="author-block"><sup>2</sup>Porsche Engineering Group GmbH, Weissach, Germany</span><br>
+                        <span class="author-block"><sup>3</sup>Institute for Applied AI, Stuttgart Media University, Stuttgart, Germany</span><br>
+                        <span class="author-block"><sup>4</sup>University of Freiburg, Freiburg, Germany</span><br>
+                        <span class="author-block"><sup>5</sup>Ulm University, Ulm, Germany</span><br>
+                    </div>
 
-          <div class="column has-text-centered">
-            <div class="publication-links">
-              <!-- PDF Link. -->
-              <span class="link-block">
+                    <div class="column has-text-centered">
+                        <div class="publication-links">
+                            <!-- PDF Link. -->
+                            <span class="link-block">
                 <a href="https://google.com"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -76,7 +78,7 @@
                   <span>Paper</span>
                 </a>
               </span>
-              <span class="link-block">
+                            <span class="link-block">
                 <a href="https://google.com"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -85,8 +87,8 @@
                   <span>arXiv</span>
                 </a>
               </span>
-              <!-- Code Link. -->
-              <span class="link-block">
+                            <!-- Code Link. -->
+                            <span class="link-block">
                 <a href="https://github.com/leisemann/ca_mmde"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -96,639 +98,722 @@
                   </a>
               </span>
 
-            </div>
+                        </div>
 
-          </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </section>
 
 
 <section class="section">
-  <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Overview</h2>
-        <div class="content has-text-justified">
-          <p>
-            The increasing accuracy reports of metric monocular depth
-            estimation models leads to a growing interest from the automotive domain.
-            Current model evaluations do not provide deeper insights on the
-            models performance, also in relation to safety critical or unseen classes.
-          </p>
-          <p>
-            We propose a novel metric that leverages three components, the class wise component, 
-            edge and corner image feature component, and a global consistency retaining component. 
-            Classes are furtherweighted on their distance in the scene and on criticality for automotive applications.
-          </p>
-          <p>
-            In the evaluation, we present the benefits of our metric through comparison to classical metrics, 
-            class-wise analytics and theretrieval of critical situations. The results show that our metric 
-            provides deeper insights into model results, while fulfilling safety criticalrequirements.
-          </p>
+    <div class="container is-max-desktop">
+        <!-- Abstract. -->
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-3">Overview</h2>
+                <div class="content has-text-justified">
+                    <p>
+                        The increasing accuracy reports of metric monocular depth
+                        estimation models leads to a growing interest from the automotive domain.
+                        Current model evaluations do not provide deeper insights on the
+                        models performance, also in relation to safety critical or unseen classes.
+                    </p>
+                    <p>
+                        We propose a novel metric that leverages three components, the class wise component,
+                        edge and corner image feature component, and a global consistency retaining component.
+                        Classes are furtherweighted on their distance in the scene and on criticality for automotive
+                        applications.
+                    </p>
+                    <p>
+                        In the evaluation, we present the benefits of our metric through comparison to classical
+                        metrics,
+                        class-wise analytics and theretrieval of critical situations. The results show that our metric
+                        provides deeper insights into model results, while fulfilling safety criticalrequirements.
+                    </p>
+                </div>
+            </div>
         </div>
-      </div>
+        <!--/ Abstract. -->
     </div>
-    <!--/ Abstract. -->
-  </div>
 </section>
-
 
 
 <section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3 is-centered has-text-centered">Gallery</h2>
-      <div id="results-carousel" class="carousel results-carousel">
+    <div class="hero-body">
+        <div class="container">
+            <h2 class="title is-3 is-centered has-text-centered">Gallery</h2>
+            <div id="results-carousel" class="carousel results-carousel">
 
-        <div class="item item-1_campus_course_convoy_0" style="border: none">
-          <div id="image-compare-default">
-            <img src="./static/images/gallery/1_campus_course_convoy_0.png" alt="" />
-            <img src="./static/images/gallery/1_campus_course_convoy_0_seg_color.png" alt="" />
-          </div>
-          <div id="image-compare-depth" style="margin-top: 10px;">
-            <img src="./static/images/gallery/1_campus_course_convoy_0_dav2vitl.png" alt="" />
-            <img src="./static/images/gallery/1_campus_course_convoy_0_m3dvitg2.png" alt="" />
-          </div>
+                <div class="item item-1_campus_course_convoy_0" style="border: none">
+                    <div id="image-compare-default">
+                        <img src="./static/images/gallery/1_campus_course_convoy_0.png" alt=""/>
+                        <img src="./static/images/gallery/1_campus_course_convoy_0_seg_color.png" alt=""/>
+                    </div>
+                    <div id="image-compare-depth" style="margin-top: 10px;">
+                        <img src="./static/images/gallery/1_campus_course_convoy_0_dav2vitl.png" alt=""/>
+                        <img src="./static/images/gallery/1_campus_course_convoy_0_m3dvitg2.png" alt=""/>
+                    </div>
+                </div>
+
+                <div class="item item-3_wet_asphalt_campus_and_urban_9" style="border: none">
+                    <div id="image-compare-default">
+                        <img src="./static/images/gallery/3_wet_asphalt_campus_and_urban_9.png" alt=""/>
+                        <img src="./static/images/gallery/3_wet_asphalt_campus_and_urban_9_seg_color.png" alt=""/>
+                    </div>
+                    <div id="image-compare-depth" style="margin-top: 10px;">
+                        <img src="./static/images/gallery/3_wet_asphalt_campus_and_urban_9_dav2vitl.png" alt=""/>
+                        <img src="./static/images/gallery/3_wet_asphalt_campus_and_urban_9_m3dvitg2.png" alt=""/>
+                    </div>
+                </div>
+
+                <div class="item item-5_suburban_road_32" style="border: none">
+                    <div id="image-compare-default">
+                        <img src="./static/images/gallery/5_suburban_road_32.png" alt=""/>
+                        <img src="./static/images/gallery/5_suburban_road_32_seg_color.png" alt=""/>
+                    </div>
+                    <div id="image-compare-depth" style="margin-top: 10px;">
+                        <img src="./static/images/gallery/5_suburban_road_32_dav2vitl.png" alt=""/>
+                        <img src="./static/images/gallery/5_suburban_road_32_m3dvitg2.png" alt=""/>
+                    </div>
+                </div>
+
+                <div class="item item-6_soil_and_gravel_path_along_bush_40" style="border: none">
+                    <div id="image-compare-default">
+                        <img src="./static/images/gallery/6_soil_and_gravel_path_along_bush_40.png" alt=""/>
+                        <img src="./static/images/gallery/6_soil_and_gravel_path_along_bush_40_seg_color.png" alt=""/>
+                    </div>
+                    <div id="image-compare-depth" style="margin-top: 10px;">
+                        <img src="./static/images/gallery/6_soil_and_gravel_path_along_bush_40_dav2vitl.png" alt=""/>
+                        <img src="./static/images/gallery/6_soil_and_gravel_path_along_bush_40_m3dvitg2.png" alt=""/>
+                    </div>
+                </div>
+
+                <div class="item item-7_graph_path_field_and_forest_with_leaves_9" style="border: none">
+                    <div id="image-compare-default">
+                        <img src="./static/images/gallery/7_graph_path_field_and_forest_with_leaves_9.png" alt=""/>
+                        <img src="./static/images/gallery/7_graph_path_field_and_forest_with_leaves_9_seg_color.png"
+                             alt=""/>
+                    </div>
+                    <div id="image-compare-depth" style="margin-top: 10px;">
+                        <img src="./static/images/gallery/7_graph_path_field_and_forest_with_leaves_9_dav2vitl.png"
+                             alt=""/>
+                        <img src="./static/images/gallery/7_graph_path_field_and_forest_with_leaves_9_m3dvitg2.png"
+                             alt=""/>
+                    </div>
+                </div>
+
+                <div class="item item-8_wet_speedway_0" style="border: none">
+                    <div id="image-compare-default">
+                        <img src="./static/images/gallery/8_wet_speedway_0.png" alt=""/>
+                        <img src="./static/images/gallery/8_wet_speedway_0_seg_color.png" alt=""/>
+                    </div>
+                    <div id="image-compare-depth" style="margin-top: 10px;">
+                        <img src="./static/images/gallery/8_wet_speedway_0_dav2vitl.png" alt=""/>
+                        <img src="./static/images/gallery/8_wet_speedway_0_m3dvitg2.png" alt=""/>
+                    </div>
+                </div>
+
+                <div class="item item-11_uphill_road_in_snow_0" style="border: none">
+                    <div id="image-compare-default">
+                        <img src="./static/images/gallery/11_uphill_road_in_snow_0.png" alt=""/>
+                        <img src="./static/images/gallery/11_uphill_road_in_snow_0_seg_color.png" alt=""/>
+                    </div>
+                    <div id="image-compare-depth" style="margin-top: 10px;">
+                        <img src="./static/images/gallery/11_uphill_road_in_snow_0_dav2vitl.png" alt=""/>
+                        <img src="./static/images/gallery/11_uphill_road_in_snow_0_m3dvitg2.png" alt=""/>
+                    </div>
+                </div>
+
+                <div class="item item-16_speedway_to_highway_0" style="border: none">
+                    <div id="image-compare-default">
+                        <img src="./static/images/gallery/16_speedway_to_highway_0.png" alt=""/>
+                        <img src="./static/images/gallery/16_speedway_to_highway_0_seg_color.png" alt=""/>
+                    </div>
+                    <div id="image-compare-depth" style="margin-top: 10px;">
+                        <img src="./static/images/gallery/16_speedway_to_highway_0_dav2vitl.png" alt=""/>
+                        <img src="./static/images/gallery/16_speedway_to_highway_0_m3dvitg2.png" alt=""/>
+                    </div>
+                </div>
+
+            </div>
+
+            <br>
+
+            <div class="content has-text-justified">
+                <p>
+                    The top row shows the original image and its segmentation mask from the
+                    <a href="https://goose-dataset.de/" style="color: #3273dc">
+                        German Outdoor and Offroad Dataset (GOOSE)</a>.
+                    The bottom row shows the respective depth maps predicted by
+                    <a href="https://arxiv.org/abs/2406.09414" style="color: #3273dc">Depth Anything V2 ViT-L</a>,
+                    which performs best according to our metric,
+                    and <a href="https://arxiv.org/abs/2404.15506" style="color: #3273dc">Metric3D V2 ViT-G2</a>,
+                    which performs best according to RMSE.
+                </p>
+            </div>
+
         </div>
-
-        <div class="item item-3_wet_asphalt_campus_and_urban_9" style="border: none">
-          <div id="image-compare-default">
-            <img src="./static/images/gallery/3_wet_asphalt_campus_and_urban_9.png" alt="" />
-            <img src="./static/images/gallery/3_wet_asphalt_campus_and_urban_9_seg_color.png" alt="" />
-          </div>
-          <div id="image-compare-depth" style="margin-top: 10px;">
-            <img src="./static/images/gallery/3_wet_asphalt_campus_and_urban_9_dav2vitl.png" alt="" />
-            <img src="./static/images/gallery/3_wet_asphalt_campus_and_urban_9_m3dvitg2.png" alt="" />
-          </div>
-        </div>
-
-        <div class="item item-5_suburban_road_32" style="border: none">
-          <div id="image-compare-default">
-            <img src="./static/images/gallery/5_suburban_road_32.png" alt="" />
-            <img src="./static/images/gallery/5_suburban_road_32_seg_color.png" alt="" />
-          </div>
-          <div id="image-compare-depth" style="margin-top: 10px;">
-            <img src="./static/images/gallery/5_suburban_road_32_dav2vitl.png" alt="" />
-            <img src="./static/images/gallery/5_suburban_road_32_m3dvitg2.png" alt="" />
-          </div>
-        </div>
-
-        <div class="item item-6_soil_and_gravel_path_along_bush_40" style="border: none">
-          <div id="image-compare-default">
-            <img src="./static/images/gallery/6_soil_and_gravel_path_along_bush_40.png" alt="" />
-            <img src="./static/images/gallery/6_soil_and_gravel_path_along_bush_40_seg_color.png" alt="" />
-          </div>
-          <div id="image-compare-depth" style="margin-top: 10px;">
-            <img src="./static/images/gallery/6_soil_and_gravel_path_along_bush_40_dav2vitl.png" alt="" />
-            <img src="./static/images/gallery/6_soil_and_gravel_path_along_bush_40_m3dvitg2.png" alt="" />
-          </div>
-        </div>
-
-        <div class="item item-7_graph_path_field_and_forest_with_leaves_9" style="border: none">
-          <div id="image-compare-default">
-            <img src="./static/images/gallery/7_graph_path_field_and_forest_with_leaves_9.png" alt="" />
-            <img src="./static/images/gallery/7_graph_path_field_and_forest_with_leaves_9_seg_color.png" alt="" />
-          </div>
-          <div id="image-compare-depth" style="margin-top: 10px;">
-            <img src="./static/images/gallery/7_graph_path_field_and_forest_with_leaves_9_dav2vitl.png" alt="" />
-            <img src="./static/images/gallery/7_graph_path_field_and_forest_with_leaves_9_m3dvitg2.png" alt="" />
-          </div>
-        </div>
-
-        <div class="item item-8_wet_speedway_0" style="border: none">
-          <div id="image-compare-default">
-            <img src="./static/images/gallery/8_wet_speedway_0.png" alt="" />
-            <img src="./static/images/gallery/8_wet_speedway_0_seg_color.png" alt="" />
-          </div>
-          <div id="image-compare-depth" style="margin-top: 10px;">
-            <img src="./static/images/gallery/8_wet_speedway_0_dav2vitl.png" alt="" />
-            <img src="./static/images/gallery/8_wet_speedway_0_m3dvitg2.png" alt="" />
-          </div>
-        </div>
-
-        <div class="item item-11_uphill_road_in_snow_0" style="border: none">
-          <div id="image-compare-default">
-            <img src="./static/images/gallery/11_uphill_road_in_snow_0.png" alt="" />
-            <img src="./static/images/gallery/11_uphill_road_in_snow_0_seg_color.png" alt="" />
-          </div>
-          <div id="image-compare-depth" style="margin-top: 10px;">
-            <img src="./static/images/gallery/11_uphill_road_in_snow_0_dav2vitl.png" alt="" />
-            <img src="./static/images/gallery/11_uphill_road_in_snow_0_m3dvitg2.png" alt="" />
-          </div>
-        </div>
-
-        <div class="item item-16_speedway_to_highway_0" style="border: none">
-          <div id="image-compare-default">
-            <img src="./static/images/gallery/16_speedway_to_highway_0.png" alt="" />
-            <img src="./static/images/gallery/16_speedway_to_highway_0_seg_color.png" alt="" />
-          </div>
-          <div id="image-compare-depth" style="margin-top: 10px;">
-            <img src="./static/images/gallery/16_speedway_to_highway_0_dav2vitl.png" alt="" />
-            <img src="./static/images/gallery/16_speedway_to_highway_0_m3dvitg2.png" alt="" />
-          </div>
-        </div>
-        
-      </div>
-
-      <br>
-
-      <div class="content has-text-justified">
-        <p>
-          The top row shows the original image and its segmentation mask from the
-          <a href="https://goose-dataset.de/" style="color: #3273dc">
-            German Outdoor and Offroad Dataset (GOOSE)</a>. 
-          The bottom row shows the respective depth maps predicted by
-          <a href="https://arxiv.org/abs/2406.09414" style="color: #3273dc">Depth Anything V2 ViT-L</a>, 
-          which performs best according to our metric,
-          and <a href="https://arxiv.org/abs/2404.15506" style="color: #3273dc">Metric3D V2 ViT-G2</a>, 
-          which performs best according to RMSE.
-        </p>
-      </div>
-
     </div>
-  </div>
 </section>
 
 
 <section class="section">
-  <div class="container is-max-desktop">
+    <div class="container is-max-desktop">
 
-    <!-- How it works. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3 is-centered has-text-centered">How it works</h2>
+        <!-- How it works. -->
+        <div class="columns is-centered">
+            <div class="column is-full-width">
+                <h2 class="title is-3 is-centered has-text-centered">How it works</h2>
+                We introduce a novel depth estimation metric designed for comprehensive scene evaluation. This metric
+                operates at three distinct levels of granularity,
+                which are divided into individual components:
+                <ol style="margin-left: 80px;">
+                    <li><strong>Class-Based Component:</strong> To enable insights into the model performance across a
+                        variety of classes, including potential out-of-distribution classes.
+                    </li>
+                    <li><strong>Feature Component:</strong> Employs techniques such as edge or corner detection filters
+                        to evaluate the model's ability to accurately represent object features.
+                    </li>
+                    <li><strong>Global Consistency Component:</strong> Integrates standard depth estimation evaluation
+                        methods to ensure overall consistency.
+                    </li>
+                </ol>
 
-        <!-- abc. -->
-        <h3 class="title is-4 has-text-centered">abc</h3>
-        <div class="content has-text-justified">
-          <p>
-            abc maybe also an image
-          </p>
+            </div>
         </div>
-        <br/>
-        <!--/ abc. -->
-
-        <!-- gidas. -->
-        <h3 class="title is-4 has-text-centered">Automotive Weighting</h3>
-        <div class="content has-text-justified">
-          <p>
-            The following table shows the <a href="https://www.gidas.org/start.html">GIDAS</a> 
-            distribution of accident opponents which we use to weight the class 
-            importance for our metric in the benchmark below.
-          </p>
-          <div style="max-width:100%; overflow-x:auto;">
-            <table>
-              <thead>
-                <tr>
-                  <th>Main Class</th>
-                  <th>Sub Class</th>
-                  <th>Distribution</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Car-to-Vehicle</td>
-                  <td></td>
-                  <td><b>62,06%</b></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td>Car</td>
-                  <td>50,04%</td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td>Motorcycle</td>
-                  <td>7,38%</td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td>Truck & Van & Bus</td>
-                  <td>3,73%</td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td>Trains</td>
-                  <td>0,63%</td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td>Other Motorized Vehicle</td>
-                  <td>0,27%</td>
-                </tr>
-                <tr>
-                  <td>Car-To-VRU</td>
-                  <td></td>
-                  <td><b>30%</b></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td>Bicycles</td>
-                  <td>21,95%</td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td>Pedestrian</td>
-                  <td>8,05%</td>
-                </tr>
-                <tr>
-                  <td>Car-To-Object</td>
-                  <td></td>
-                  <td><b>7,94%</b></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td>Pole/tree</td>
-                  <td>3,24%</td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td>Guardrail</td>
-                  <td>1,17%</td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td>Ditch / Embankment</td>
-                  <td>1,07%</td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td>Road / Terrain</td>
-                  <td>1,04%</td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td>Other Object</td>
-                  <td>0,75%</td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td>Wall / bridge</td>
-                  <td>0,56%</td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td>Bush / Fence</td>
-                  <td>0,11%</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <br/>
-        <!--/ gidas. -->
-
-
-      </div>
+        <!--/ How it works. -->
     </div>
-    <!--/ How it works. -->
-  </div>
+</section>
+
+<section class="section">
+    <div class="container is-max-desktop">
+
+        <!-- How it works. -->
+        <div class="columns is-centered">
+            <div class="column is-full-width">
+
+                <!-- Class-Based Component. -->
+                <h4 class="title is-4 has-text-centered">Class-Based Component</h4>
+                <div class="content has-text-justified">
+                    <p>
+                        This component measures the metric error of each object class individually, such as cars,
+                        trucks, buildings, and poles.
+                        This approach provides detailed insights into how different models handle various object
+                        classes,
+                        improving the understanding of model performance on previously uncommon scenarios.
+                    </p>
+                </div>
+                <br/>
+
+                <h5 class="title is-5 has-text-centered">Intra-Class Weighting</h5>
+                <div class="content has-text-justified">
+                    <p>
+                        The importance of classes can vary highly between frames and situations. With a focus on
+                        classifications masks, a single mask may encompass multiple car instances at varying distances
+                        within the scene.
+                        Treating these instances similarly throughout different scenes complicates the interpretation of
+                        the metric.
+                        Therefore weighting the classes is necessary.
+                    </p>
+
+                    <p>Consequently, we propose a distance-based intra-class weighting \( w_{\text{dist}} \), based on
+                        the distances within each scene. We define this as:</p>
+
+                    <p>
+                        \[
+                        w_{\text{dist}} = \frac{d_{\text{class}} - \min(D_{\text{classes}})}{\max(D_{\text{classes}}) -
+                        \min(D_{\text{classes}})}
+                        \]
+                    </p>
+
+                    <p>
+                        \[
+                        \text{with } d_{\text{class}} = d_{\text{scene-max}} - d_{\text{class-min}}
+                        \]
+                    </p>
+
+                    <p>where \( \text{d}_{\text{scene-max}} \) describes the maximum distance within the entire scene
+                        and \( \text{d}_{\text{class-min}} \) the minimum distance within a class.</p>
+
+                    <br/>
+
+                    <!-- gidas. -->
+                    <h5 class="title is-5 has-text-centered">Automotive Inter-Class</h5>
+                    <div class="content has-text-justified">
+                        <p>
+                            The following table shows the <a href="https://www.gidas.org/start.html">GIDAS</a>
+                            distribution of accident opponents which we use to weight the class
+                            importance for our metric in the benchmark below.
+                        </p>
+                        <div style="max-width:100%; overflow-x:auto;">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th>Main Class</th>
+                                    <th>Sub Class</th>
+                                    <th>Distribution</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>Car-to-Vehicle</td>
+                                    <td></td>
+                                    <td><b>62,06%</b></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>Car</td>
+                                    <td>50,04%</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>Motorcycle</td>
+                                    <td>7,38%</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>Truck & Van & Bus</td>
+                                    <td>3,73%</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>Trains</td>
+                                    <td>0,63%</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>Other Motorized Vehicle</td>
+                                    <td>0,27%</td>
+                                </tr>
+                                <tr>
+                                    <td>Car-To-VRU</td>
+                                    <td></td>
+                                    <td><b>30%</b></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>Bicycles</td>
+                                    <td>21,95%</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>Pedestrian</td>
+                                    <td>8,05%</td>
+                                </tr>
+                                <tr>
+                                    <td>Car-To-Object</td>
+                                    <td></td>
+                                    <td><b>7,94%</b></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>Pole/tree</td>
+                                    <td>3,24%</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>Guardrail</td>
+                                    <td>1,17%</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>Ditch / Embankment</td>
+                                    <td>1,07%</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>Road / Terrain</td>
+                                    <td>1,04%</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>Other Object</td>
+                                    <td>0,75%</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>Wall / bridge</td>
+                                    <td>0,56%</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>Bush / Fence</td>
+                                    <td>0,11%</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <br/>
+                    <!--/ gidas. -->
+
+
+                </div>
+            </div>
+            <!--/ How it works. -->
+        </div>
 </section>
 
 
-    
 <section class="section">
-  <div class="container is-max-desktop">
-    <!-- Benchmark. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3 has-text-centered">Benchmark</h2>
-        <div class="content has-text-justified">
-          <p>
-            We compare the results of over 25 <a href="https://goose-dataset.de/">GOOSE</a> dataset scenes with classical errors against our metric. 
-            While both provide comprehensive insights into the model performances, 
-            ours offers a more nuanced interpretation.
-          </p>
-          <div style="max-width:100%; overflow-x:auto;">
-            <table>
-              <thead>
-                <tr>
-                  <th>Model</th>
-                  <th>Variant</th>
-                  <th>MAE</th>
-                  <th>RMSE</th>
-                  <th>Abs-Rel</th>
-                  <th>Ours</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>AdaBins</td>
-                  <td>KITTI</td>
-                  <td>13.3</td>
-                  <td>25.21</td>
-                  <td>0.33</td>
-                  <td>20.65</td>
-                </tr>
-                <tr>
-                  <td>DepthAnything V2</td>
-                  <td>ViT L</td>
-                  <td>8.39</td>
-                  <td><u>16.56</u></td>
-                  <td>0.3</td>
-                  <td>14.47</td>
-                </tr>
-                <tr>
-                  <td>EcoDepth</td>
-                  <td>-</td>
-                  <td>10.25</td>
-                  <td>20.51</td>
-                  <td>0.28</td>
-                  <td>17.43</td>
-                </tr>
-                <tr>
-                  <td>Marigold</td>
-                  <td>-</td>
-                  <td>12.70</td>
-                  <td>20.38</td>
-                  <td>0.65</td>
-                  <td>17.72</td>
-                </tr>
-                <tr>
-                  <td>Metric3D V2</td>
-                  <td>ViT G2</td>
-                  <td><b>6.47</b></td>
-                  <td><b>14.44</b></td>
-                  <td><b>0.2</b></td>
-                  <td><b>11.57</b></td>
-                </tr>
-                <tr>
-                  <td>PatchFusion</td>
-                  <td>DA V1 ViT L</td>
-                  <td>15.05</td>
-                  <td>24.33</td>
-                  <td>0.55</td>
-                  <td>23.32</td>
-                </tr>
-                <tr>
-                  <td>UniDepth V1</td>
-                  <td>ConvNext L</td>
-                  <td><u>8.26</u></td>
-                  <td>16.7</td>
-                  <td><u>0.24</u></td>
-                  <td><u>14.19</u></td>
-                </tr>
-                <tr>
-                  <td>UniDepth V2</td>
-                  <td>ViT L</td>
-                  <td>8.57</td>
-                  <td>20</td>
-                  <td>0.27</td>
-                  <td>14.24</td>
-                </tr>
-                <tr>
-                  <td>ZoeDepth</td>
-                  <td>NYU + KITTI</td>
-                  <td>9.51</td>
-                  <td>19.32</td>
-                  <td>0.27</td>
-                  <td>16.22</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+    <div class="container is-max-desktop">
+        <!-- Benchmark. -->
+        <div class="columns is-centered">
+            <div class="column is-full-width">
+                <h2 class="title is-3 has-text-centered">Benchmark</h2>
+                <div class="content has-text-justified">
+                    <p>
+                        We compare the results of over 25 <a href="https://goose-dataset.de/">GOOSE</a> dataset scenes
+                        with classical errors against our metric.
+                        While both provide comprehensive insights into the model performances,
+                        ours offers a more nuanced interpretation.
+                    </p>
+                    <div style="max-width:100%; overflow-x:auto;">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Model</th>
+                                <th>Variant</th>
+                                <th>MAE</th>
+                                <th>RMSE</th>
+                                <th>Abs-Rel</th>
+                                <th>Ours</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>AdaBins</td>
+                                <td>KITTI</td>
+                                <td>13.3</td>
+                                <td>25.21</td>
+                                <td>0.33</td>
+                                <td>20.65</td>
+                            </tr>
+                            <tr>
+                                <td>DepthAnything V2</td>
+                                <td>ViT L</td>
+                                <td>8.39</td>
+                                <td><u>16.56</u></td>
+                                <td>0.3</td>
+                                <td>14.47</td>
+                            </tr>
+                            <tr>
+                                <td>EcoDepth</td>
+                                <td>-</td>
+                                <td>10.25</td>
+                                <td>20.51</td>
+                                <td>0.28</td>
+                                <td>17.43</td>
+                            </tr>
+                            <tr>
+                                <td>Marigold</td>
+                                <td>-</td>
+                                <td>12.70</td>
+                                <td>20.38</td>
+                                <td>0.65</td>
+                                <td>17.72</td>
+                            </tr>
+                            <tr>
+                                <td>Metric3D V2</td>
+                                <td>ViT G2</td>
+                                <td><b>6.47</b></td>
+                                <td><b>14.44</b></td>
+                                <td><b>0.2</b></td>
+                                <td><b>11.57</b></td>
+                            </tr>
+                            <tr>
+                                <td>PatchFusion</td>
+                                <td>DA V1 ViT L</td>
+                                <td>15.05</td>
+                                <td>24.33</td>
+                                <td>0.55</td>
+                                <td>23.32</td>
+                            </tr>
+                            <tr>
+                                <td>UniDepth V1</td>
+                                <td>ConvNext L</td>
+                                <td><u>8.26</u></td>
+                                <td>16.7</td>
+                                <td><u>0.24</u></td>
+                                <td><u>14.19</u></td>
+                            </tr>
+                            <tr>
+                                <td>UniDepth V2</td>
+                                <td>ViT L</td>
+                                <td>8.57</td>
+                                <td>20</td>
+                                <td>0.27</td>
+                                <td>14.24</td>
+                            </tr>
+                            <tr>
+                                <td>ZoeDepth</td>
+                                <td>NYU + KITTI</td>
+                                <td>9.51</td>
+                                <td>19.32</td>
+                                <td>0.27</td>
+                                <td>16.22</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+        <!--/ Benchmark. -->
     </div>
-    <!--/ Benchmark. -->
-  </div>
 </section>
 
 
-    
 <section class="section">
-  <div class="container is-max-desktop">
-    <!-- Related Work. -->
-    <h2 class="title is-3 has-text-centered">Related Work</h2>
-      <div id="results-carousel" class="carousel results-carousel">
+    <div class="container is-max-desktop">
+        <!-- Related Work. -->
+        <h2 class="title is-3 has-text-centered">Related Work</h2>
+        <div id="results-carousel" class="carousel results-carousel">
 
-        <div class="item" style="background-color: rgba(128, 0, 128, 0.2);">
-          <div style="padding: 1rem">
-            <h4 class="title is-4 has-text-centered">AdaBins</h4>
-            <table style="width: 100%; font-size: 1rem;">
-              <tr>
-                <td style="padding-right: 1rem;"><strong>Authors</strong></td>
-                <td>Farooq Bhat, Shariq and Alhashim, Ibraheem and Wonka, Peter</td>
-              </tr>
-              <tr>
-                <td style="padding-right: 1rem;"><strong>GitHub</strong></td>
-                <td><a href="https://github.com/shariqfarooq123/AdaBins">https://github.com/shariqfarooq123/AdaBins</a></td>
-              </tr>
-              <tr>
-                <td style="padding-right: 1rem;"><strong>Paper</strong></td>
-                <td><a href="https://arxiv.org/pdf/2011.14141">https://arxiv.org/pdf/2011.14141</a></td>
-              </tr>
-            </table>
-          </div>
-        </div>
-        
-        <div class="item" style="background-color: rgba(128, 0, 128, 0.2);">
-          <div style="padding: 1rem">
-            <h4 class="title is-4 has-text-centered">Depth Anything V2</h4>
-            <table style="width: 100%; font-size: 1rem;">
-              <tr>
-                <td style="padding-right: 1rem;"><strong>Authors</strong></td>
-                <td>Yang, Lihe and Kang, Bingyi and Huang, Zilong and Zhao, Zhen and Xu, Xiaogang and Feng, Jiashi and Zhao, Hengshuang</td>
-              </tr>
-              <tr>
-                <td style="padding-right: 1rem;"><strong>GitHub</strong></td>
-                <td><a href="https://github.com/DepthAnything/Depth-Anything-V2">https://github.com/DepthAnything/Depth-Anything-V2</a></td>
-              </tr>
-              <tr>
-                <td style="padding-right: 1rem;"><strong>Paper</strong></td>
-                <td><a href="https://arxiv.org/pdf/2406.09414">https://arxiv.org/pdf/2406.09414</a></td>
-              </tr>
-            </table>
-          </div>
-        </div>
-        
-        <div class="item" style="background-color: rgba(128, 0, 128, 0.2);">
-          <div style="padding: 1rem">
-            <h4 class="title is-4 has-text-centered">ECoDepth</h4>
-            <table style="width: 100%; font-size: 1rem;">
-              <tr>
-                <td style="padding-right: 1rem;"><strong>Authors</strong></td>
-                <td>Suraj Patni and Aradhye Agarwal and Chetan Arora</td>
-              </tr>
-              <tr>
-                <td style="padding-right: 1rem;"><strong>GitHub</strong></td>
-                <td><a href="https://github.com/aradhye2002/ecodepth">https://github.com/aradhye2002/ecodepth</a></td>
-              </tr>
-              <tr>
-                <td style="padding-right: 1rem;"><strong>Paper</strong></td>
-                <td><a href="https://arxiv.org/pdf/2403.18807">https://arxiv.org/pdf/2403.18807</a></td>
-              </tr>
-            </table>
-          </div>
-        </div>
+            <div class="item" style="background-color: rgba(74, 74, 74, 0.2);">
+                <div style="padding: 1rem">
+                    <h4 class="title is-4 has-text-centered">AdaBins</h4>
+                    <table style="width: 100%; font-size: 1rem;">
+                        <tr>
+                            <td style="padding-right: 1rem;"><strong>Authors</strong></td>
+                            <td>Farooq Bhat, Shariq and Alhashim, Ibraheem and Wonka, Peter</td>
+                        </tr>
+                        <tr>
+                            <td style="padding-right: 1rem;"><strong>GitHub</strong></td>
+                            <td><a href="https://github.com/shariqfarooq123/AdaBins">https://github.com/shariqfarooq123/AdaBins</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-right: 1rem;"><strong>Paper</strong></td>
+                            <td><a href="https://arxiv.org/pdf/2011.14141">https://arxiv.org/pdf/2011.14141</a></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
 
-        <div class="item" style="background-color: rgba(128, 0, 128, 0.2);">
-          <div style="padding: 1rem">
-            <h4 class="title is-4 has-text-centered">Marigold</h4>
-            <table style="width: 100%; font-size: 1rem;">
-              <tr>
-                <td style="padding-right: 1rem;"><strong>Authors</strong></td>
-                <td>Bingxin Ke and Anton Obukhov and Shengyu Huang and Nando Metzger and Rodrigo Caye Daudt and Konrad Schindler</td>
-              </tr>
-              <tr>
-                <td style="padding-right: 1rem;"><strong>GitHub</strong></td>
-                <td><a href="https://github.com/prs-eth/marigold">https://github.com/prs-eth/marigold</a></td>
-              </tr>
-              <tr>
-                <td style="padding-right: 1rem;"><strong>Paper</strong></td>
-                <td><a href="https://arxiv.org/pdf/2312.02145">https://arxiv.org/pdf/2312.02145</a></td>
-              </tr>
-            </table>
-          </div>
-        </div>
+            <div class="item" style="background-color: rgba(74, 74, 74, 0.2);">
+                <div style="padding: 1rem">
+                    <h4 class="title is-4 has-text-centered">Depth Anything V2</h4>
+                    <table style="width: 100%; font-size: 1rem;">
+                        <tr>
+                            <td style="padding-right: 1rem;"><strong>Authors</strong></td>
+                            <td>Yang, Lihe and Kang, Bingyi and Huang, Zilong and Zhao, Zhen and Xu, Xiaogang and Feng,
+                                Jiashi and Zhao, Hengshuang
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-right: 1rem;"><strong>GitHub</strong></td>
+                            <td><a href="https://github.com/DepthAnything/Depth-Anything-V2">https://github.com/DepthAnything/Depth-Anything-V2</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-right: 1rem;"><strong>Paper</strong></td>
+                            <td><a href="https://arxiv.org/pdf/2406.09414">https://arxiv.org/pdf/2406.09414</a></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
 
-        <div class="item" style="background-color: rgba(128, 0, 128, 0.2);">
-          <div style="padding: 1rem">
-            <h4 class="title is-4 has-text-centered">Metric3D V2</h4>
-            <table style="width: 100%; font-size: 1rem;">
-              <tr>
-                <td style="padding-right: 1rem;"><strong>Authors</strong></td>
-                <td>Mu Hu and Wei Yin and Chi Zhang and Zhipeng Cai and Xiaoxiao Long and Hao Chen and Kaixuan Wang and Gang Yu and Chunhua Shen and Shaojie Shen</td>
-              </tr>
-              <tr>
-                <td style="padding-right: 1rem;"><strong>GitHub</strong></td>
-                <td><a href="https://github.com/YvanYin/Metric3D">https://github.com/YvanYin/Metric3D</a></td>
-              </tr>
-              <tr>
-                <td style="padding-right: 1rem;"><strong>Paper</strong></td>
-                <td><a href="https://arxiv.org/pdf/2404.15506">https://arxiv.org/pdf/2404.15506</a></td>
-              </tr>
-            </table>
-          </div>
-        </div>
+            <div class="item" style="background-color: rgba(74, 74, 74, 0.2);">
+                <div style="padding: 1rem">
+                    <h4 class="title is-4 has-text-centered">ECoDepth</h4>
+                    <table style="width: 100%; font-size: 1rem;">
+                        <tr>
+                            <td style="padding-right: 1rem;"><strong>Authors</strong></td>
+                            <td>Suraj Patni and Aradhye Agarwal and Chetan Arora</td>
+                        </tr>
+                        <tr>
+                            <td style="padding-right: 1rem;"><strong>GitHub</strong></td>
+                            <td><a href="https://github.com/aradhye2002/ecodepth">https://github.com/aradhye2002/ecodepth</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-right: 1rem;"><strong>Paper</strong></td>
+                            <td><a href="https://arxiv.org/pdf/2403.18807">https://arxiv.org/pdf/2403.18807</a></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
 
-        <div class="item" style="background-color: rgba(128, 0, 128, 0.2);">
-          <div style="padding: 1rem">
-            <h4 class="title is-4 has-text-centered">PatchFusion</h4>
-            <table style="width: 100%; font-size: 1rem;">
-              <tr>
-                <td style="padding-right: 1rem;"><strong>Authors</strong></td>
-                <td>Zhenyu Li and Shariq Farooq Bhat and Peter Wonka</td>
-              </tr>
-              <tr>
-                <td style="padding-right: 1rem;"><strong>GitHub</strong></td>
-                <td><a href="https://github.com/zhyever/PatchFusion">https://github.com/zhyever/PatchFusion</a></td>
-              </tr>
-              <tr>
-                <td style="padding-right: 1rem;"><strong>Paper</strong></td>
-                <td><a href="https://arxiv.org/pdf/2312.02284">https://arxiv.org/pdf/2312.02284</a></td>
-              </tr>
-            </table>
-          </div>
-        </div>
+            <div class="item" style="background-color: rgba(74, 74, 74, 0.2);">
+                <div style="padding: 1rem">
+                    <h4 class="title is-4 has-text-centered">Marigold</h4>
+                    <table style="width: 100%; font-size: 1rem;">
+                        <tr>
+                            <td style="padding-right: 1rem;"><strong>Authors</strong></td>
+                            <td>Bingxin Ke and Anton Obukhov and Shengyu Huang and Nando Metzger and Rodrigo Caye Daudt
+                                and Konrad Schindler
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-right: 1rem;"><strong>GitHub</strong></td>
+                            <td><a href="https://github.com/prs-eth/marigold">https://github.com/prs-eth/marigold</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-right: 1rem;"><strong>Paper</strong></td>
+                            <td><a href="https://arxiv.org/pdf/2312.02145">https://arxiv.org/pdf/2312.02145</a></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
 
-        <div class="item" style="background-color: rgba(128, 0, 128, 0.2);">
-          <div style="padding: 1rem">
-            <h4 class="title is-4 has-text-centered">UniDepth</h4>
-            <table style="width: 100%; font-size: 1rem;">
-              <tr>
-                <td style="padding-right: 1rem;"><strong>Authors</strong></td>
-                <td>Luigi Piccinelli and Yung-Hsu Yang and Christos Sakaridis and Mattia Segu and Siyuan Li and Luc Van Gool and Fisher Yu</td>
-              </tr>
-              <tr>
-                <td style="padding-right: 1rem;"><strong>GitHub</strong></td>
-                <td><a href="https://github.com/lpiccinelli-eth/UniDepth">https://github.com/lpiccinelli-eth/UniDepth</a></td>
-              </tr>
-              <tr>
-                <td style="padding-right: 1rem;"><strong>Paper</strong></td>
-                <td><a href="https://arxiv.org/pdf/2403.18913">https://arxiv.org/pdf/2403.18913</a></td>
-              </tr>
-            </table>
-          </div>
-        </div>
+            <div class="item" style="background-color: rgba(74, 74, 74, 0.2);">
+                <div style="padding: 1rem">
+                    <h4 class="title is-4 has-text-centered">Metric3D V2</h4>
+                    <table style="width: 100%; font-size: 1rem;">
+                        <tr>
+                            <td style="padding-right: 1rem;"><strong>Authors</strong></td>
+                            <td>Mu Hu and Wei Yin and Chi Zhang and Zhipeng Cai and Xiaoxiao Long and Hao Chen and
+                                Kaixuan Wang and Gang Yu and Chunhua Shen and Shaojie Shen
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-right: 1rem;"><strong>GitHub</strong></td>
+                            <td><a href="https://github.com/YvanYin/Metric3D">https://github.com/YvanYin/Metric3D</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-right: 1rem;"><strong>Paper</strong></td>
+                            <td><a href="https://arxiv.org/pdf/2404.15506">https://arxiv.org/pdf/2404.15506</a></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
 
-        <div class="item" style="background-color: rgba(128, 0, 128, 0.2);">
-          <div style="padding: 1rem">
-            <h4 class="title is-4 has-text-centered">ZoeDepth</h4>
-            <table style="width: 100%; font-size: 1rem;">
-              <tr>
-                <td style="padding-right: 1rem;"><strong>Authors</strong></td>
-                <td>Shariq Farooq Bhat and Reiner Birkl and Diana Wofk and Peter Wonka and Matthias Müller</td>
-              </tr>
-              <tr>
-                <td style="padding-right: 1rem;"><strong>GitHub</strong></td>
-                <td><a href="https://github.com/isl-org/ZoeDepth">https://github.com/isl-org/ZoeDepth</a></td>
-              </tr>
-              <tr>
-                <td style="padding-right: 1rem;"><strong>Paper</strong></td>
-                <td><a href="https://arxiv.org/pdf/2302.12288">https://arxiv.org/pdf/2302.12288</a></td>
-              </tr>
-            </table>
-          </div>
-        </div>
+            <div class="item" style="background-color: rgba(74, 74, 74, 0.2);">
+                <div style="padding: 1rem">
+                    <h4 class="title is-4 has-text-centered">PatchFusion</h4>
+                    <table style="width: 100%; font-size: 1rem;">
+                        <tr>
+                            <td style="padding-right: 1rem;"><strong>Authors</strong></td>
+                            <td>Zhenyu Li and Shariq Farooq Bhat and Peter Wonka</td>
+                        </tr>
+                        <tr>
+                            <td style="padding-right: 1rem;"><strong>GitHub</strong></td>
+                            <td>
+                                <a href="https://github.com/zhyever/PatchFusion">https://github.com/zhyever/PatchFusion</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-right: 1rem;"><strong>Paper</strong></td>
+                            <td><a href="https://arxiv.org/pdf/2312.02284">https://arxiv.org/pdf/2312.02284</a></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
 
-        
-      </div>
-    <!--/ Related Work. -->
-  </div>
+            <div class="item" style="background-color: rgba(74, 74, 74, 0.2);">
+                <div style="padding: 1rem">
+                    <h4 class="title is-4 has-text-centered">UniDepth</h4>
+                    <table style="width: 100%; font-size: 1rem;">
+                        <tr>
+                            <td style="padding-right: 1rem;"><strong>Authors</strong></td>
+                            <td>Luigi Piccinelli and Yung-Hsu Yang and Christos Sakaridis and Mattia Segu and Siyuan Li
+                                and Luc Van Gool and Fisher Yu
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-right: 1rem;"><strong>GitHub</strong></td>
+                            <td><a href="https://github.com/lpiccinelli-eth/UniDepth">https://github.com/lpiccinelli-eth/UniDepth</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-right: 1rem;"><strong>Paper</strong></td>
+                            <td><a href="https://arxiv.org/pdf/2403.18913">https://arxiv.org/pdf/2403.18913</a></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="item" style="background-color: rgba(74, 74, 74, 0.2);">
+                <div style="padding: 1rem">
+                    <h4 class="title is-4 has-text-centered">ZoeDepth</h4>
+                    <table style="width: 100%; font-size: 1rem;">
+                        <tr>
+                            <td style="padding-right: 1rem;"><strong>Authors</strong></td>
+                            <td>Shariq Farooq Bhat and Reiner Birkl and Diana Wofk and Peter Wonka and Matthias Müller
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-right: 1rem;"><strong>GitHub</strong></td>
+                            <td><a href="https://github.com/isl-org/ZoeDepth">https://github.com/isl-org/ZoeDepth</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-right: 1rem;"><strong>Paper</strong></td>
+                            <td><a href="https://arxiv.org/pdf/2302.12288">https://arxiv.org/pdf/2302.12288</a></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+
+        </div>
+        <!--/ Related Work. -->
+    </div>
 </section>
 
 
 <section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">Citation</h2>
-    <pre><code>@article{tba,
+    <div class="container is-max-desktop content">
+        <h2 class="title">Citation</h2>
+        <pre><code>@article{tba,
   author    = {tba},
   title     = {tba},
   journal   = {tba},
   year      = {2024},
 }</code></pre>
-  </div>
+    </div>
 </section>
 
 
 <footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <p>
-            Demo images are from the
-            <a href="https://goose-dataset.de/">
-              German Outdoor and Offroad Dataset (GOOSE)
-            </a>.
-          </p>
-          <p>
-            Favicon is from 
-            <a href="https://github.com/twitter/twemoji">
-              Twemoji
-            </a>
-            and licensed under
-            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">
-              CC-BY-4.0
-            </a>.
-          </p>
-          <p>
-            Image comparison slider based on
-            <a href="https://github.com/kylewetton/image-compare-viewer">image-compare-viewer</a>
-            and licensed under
-            <a rel="license" href="https://github.com/kylewetton/image-compare-viewer/blob/master/LICENSE">
-              MIT
-            </a>.
-          </p>
-          <p>
-            Website template based on
-            <a href="https://github.com/nerfies/nerfies.github.io">
-              Nerfies
-            </a>
-            and licensed under
-            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
-              CC-BY-SA-4.0
-            </a>.
-          </p>
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-8">
+                <div class="content">
+                    <p>
+                        Demo images are from the
+                        <a href="https://goose-dataset.de/">
+                            German Outdoor and Offroad Dataset (GOOSE)
+                        </a>.
+                    </p>
+                    <p>
+                        Favicon is from
+                        <a href="https://github.com/twitter/twemoji">
+                            Twemoji
+                        </a>
+                        and licensed under
+                        <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+                            CC-BY-4.0
+                        </a>.
+                    </p>
+                    <p>
+                        Image comparison slider based on
+                        <a href="https://github.com/kylewetton/image-compare-viewer">image-compare-viewer</a>
+                        and licensed under
+                        <a rel="license" href="https://github.com/kylewetton/image-compare-viewer/blob/master/LICENSE">
+                            MIT
+                        </a>.
+                    </p>
+                    <p>
+                        Website template based on
+                        <a href="https://github.com/nerfies/nerfies.github.io">
+                            Nerfies
+                        </a>
+                        and licensed under
+                        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+                            CC-BY-SA-4.0
+                        </a>.
+                    </p>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </footer>
 
 </body>
