@@ -341,12 +341,21 @@
                     <br/>
 
                     <!-- gidas. -->
-                    <h5 class="title is-5 has-text-centered">Automotive Inter-Class</h5>
+                    <h5 class="title is-5 has-text-centered">Automotive Inter-Class Weighting</h5>
+
                     <div class="content has-text-justified">
                         <p>
-                            The following table shows the <a href="https://www.gidas.org/start.html">GIDAS</a>
-                            distribution of accident opponents which we use to weight the class
-                            importance for our metric in the benchmark below.
+                            Since the class importance heavily relies on the use case at hand, the specific
+                            weighting of the classes can be chosen individually. As our focus is the use of
+                            MMDE models in automotive applications respectively automotive safety, we
+                            provide an in-depth weight setup in respect thereof.
+                            <br>
+                            Therefore, we leverage accident
+                            data and use the distribution between the accident opponent.We source our data
+                            from the German In-Depth Accident Study (<a
+                                href="https://www.gidas.org/start.html">GIDAS</a>) database.
+                            The following table shows the distribution of first accident opponents which we use to
+                            weight the class importance.
                         </p>
                         <div style="max-width:100%; overflow-x:auto;">
                             <table>
@@ -450,11 +459,140 @@
                     <br/>
                     <!--/ gidas. -->
 
+                    <h5 class="title is-5 has-text-centered">Component Result</h5>
+
+                    <div class="content has-text-justified">
+
+                        The final class-based component is calculated using MAE, the intra-class weight
+                        \( w_{\text{dist}} \), and the inter-class weight \( w_{\text{class}} \).
+
+                        <p>
+                            \[
+                            \text {E}_{\text {class}} = \sum_{c=1}^{C} w_{\text{class}} \cdot w_{\text{dist}} \cdot
+                            \text
+                            {MAE}(I)
+                            \]
+                        </p>
+                        Achieving an error \( \text{E}_{\text{class}} \) that incorporates how important a class is in
+                        general
+                        and also how relevant this class is in the respective image situation.
+
+                    </div>
+                </div>
+                <!--/ How it works. -->
+            </div>
+</section>
+
+<section class="section">
+    <div class="container is-max-desktop">
+
+        <!-- How it works. -->
+        <div class="columns is-centered">
+            <div class="column is-full-width">
+
+                <!-- Class-Based Component. -->
+                <h4 class="title is-4 has-text-centered">Local Feature Component</h4>
+                <div class="content has-text-justified">
+                    <p>
+                        Another important factor for a qualitative depth map is preserving fine details
+                        in the prediction. These details serve multiple purposes, such as better differentiation
+                        between individual objects or considering unique - and often relevant -
+                        shape changes such as trailer hitches or opened doors on cars.
+
+                    </p>
+                </div>
+                <br/>
+
+                <h5 class="title is-5 has-text-centered">Feature Extraction</h5>
+                <div class="content has-text-justified">
+                    <p>
+                        For the task of extracting possibly relevant features, we apply several classical methods on the
+                        unmasked input image. We implement multiple corner detection algorithms, e.g., Harris, given the
+                        proven robustness of corner features for computer vision tasks such as feature matching. To
+                        further evaluate class-specific differences in the models in question we
+                        mask the edge depth map with the previously defined classes
+                    </p>
 
                 </div>
+                <h5 class="title is-5 has-text-centered">Component Result</h5>
+                <div class="content has-text-justified">
+                    <p>
+                        Also, the importance of edge features is dependent on the distance to the capture point, these
+                        are scaled by the \( w_{\text{dist}} \).
+                    </p>
+                    <p>
+                        \[
+                        \text {E}_{\text{feature}} = \sum_{c=1}^{C} w_{\text{class}} \cdot w_{\text{dist}} \cdot
+                        \text
+                        {MAE}(I_{cf})
+                        \]
+                    </p>
+
+                </div>
+
+
             </div>
             <!--/ How it works. -->
         </div>
+</section>
+
+<section class="section">
+
+<div class="container is-max-desktop">
+    <!-- How it works. -->
+    <div class="columns is-centered">
+        <div class="column is-full-width">
+
+            <!-- Class-Based Component. -->
+            <h4 class="title is-4 has-text-centered">Global Consistency Component</h4>
+            <div class="content has-text-justified">
+                <p>
+                    As we aim for a comprehensive evaluation we further examine the global consistency
+                    of the generated depth map. In addition, this also covers situations in
+                    which no labels or masks for certain objects are provided, as well as global scaling
+                    issues not represented in the other components. Therefore we simply calculate
+                    Eglobal the MAE between the predicted and ground truth depth.
+
+                </p>
+            </div>
+
+
+            <!--/ How it works. -->
+        </div>
+    </div>
+</div>
+</section>
+
+
+<section class="section">
+
+<div class="container is-max-desktop">
+    <!-- How it works. -->
+    <div class="columns is-centered">
+        <div class="column is-full-width">
+
+            <!-- Class-Based Component. -->
+            <h4 class="title is-4 has-text-centered">Overall Metric Conclusion</h4>
+            <div class="content has-text-justified">
+                <p>
+                    Although the individual weighting can be dependent on
+                    the specific scenario, we propose the overall combination of components as
+                </p>
+                <p>
+                    \[
+                    L = \gamma \cdot \text{E}_{\text{class}} + \gamma \cdot \text{E}_{\text{feature}} + \gamma \cdot \text{E}_{\text{global}}
+                    \]
+                    with γ = 1 allowing a near metric offset evaluation while incorporating the class
+                    and distance weightings.
+                </p>
+
+            </div>
+
+
+            <!--/ How it works. -->
+        </div>
+    </div>
+</div>
 </section>
 
 
