@@ -134,12 +134,12 @@ $(document).ready(function() {
 
     var options = {
       initialSlide: 0,
-			slidesToScroll: 1,
-			slidesToShow: 2,
-			loop: true,
-			infinite: false,
-			autoplay: true,
-			autoplaySpeed: 4000,
+      slidesToScroll: 1,
+      slidesToShow: 2,
+      loop: true,
+      infinite: false,
+      autoplay: false,
+      autoplaySpeed: 4000,
       pagination: false,
       breakpoints: [{
         changePoint: 768,
